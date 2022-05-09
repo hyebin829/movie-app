@@ -1,5 +1,5 @@
 import { axios } from 'hooks/worker'
-import { ImovieAPIRes } from 'types/weather.d'
+import { ImovieAPIRes } from 'types/movie'
 
 const BASE_URL = 'http://www.omdbapi.com'
 
