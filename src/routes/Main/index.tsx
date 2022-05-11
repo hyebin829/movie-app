@@ -1,41 +1,63 @@
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { ChangeEvent, useCallback, useEffect, FormEvent } from 'react'
+
+import { MovieDataState, SearchWordState } from 'state'
+import { getMovieApi } from 'services/movie'
+
 import styles from './Main.module.scss'
 
-import { useMount, useState } from 'hooks'
-import { getWeatherApi } from 'services/weather'
-import { ImovieAPIRes } from 'types/movie'
-import MovieItem from './MovieItem'
+const Main = () => {
+  const movieData = useRecoilValue(MovieDataState)
+  const setMovieData = useSetRecoilState(MovieDataState)
 
-const Weather = () => {
-  const [data, setData] = useState<ImovieAPIRes>()
+  const searchWord = useRecoilValue(SearchWordState)
+  const setSearchWord = useSetRecoilState(SearchWordState)
 
-  useMount(() => {
-    getWeatherApi({
-      movieName: 'doctor',
-      page: 2,
+  useEffect(() => {}, [movieData, setMovieData])
+
+  const getMovie = useCallback(() => {
+    getMovieApi({
+      movieName: searchWord,
+      page: 1,
+    }).then((res) => {
+      if (res.data.Response === 'False') setMovieData([])
+      setMovieData(res.data.Search)
     })
-      .then((res) => {
-        setData(res.data)
-        console.log(res)
-      })
-      .catch((res) => {
-        console.error('error')
-      })
-  })
+  }, [searchWord, setMovieData])
 
-  if (!data) return null
+  const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault()
+    setSearchWord(e.target.value)
+  }
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    getMovie()
+  }
 
   return (
     <section className={styles.weather}>
       <div className={styles.forecast}>
         <h2>Next forecast</h2>
-        <div>
-          {data.Search.map((item, index) => (
-            <MovieItem key={`movie-${item.Title}`} item={item} />
+        <form onSubmit={handleSubmit}>
+          <input type='text' value={searchWord} onChange={onChangeInput} />
+        </form>
+        <button onClick={getMovie} type='button'>
+          버튼
+        </button>
+        {movieData &&
+          movieData.map((item) => (
+            <ul key={`${item.imdbID}-movie`}>
+              <li>{item.Title}</li>
+              <li>{item.Year}</li>
+              <li>{item.Type}</li>
+              <img src={item.Poster} alt='moviePoster' />
+            </ul>
           ))}
-        </div>
+        {!movieData && <div>noting</div>}
       </div>
     </section>
   )
 }
 
-export default Weather
+export default Main
