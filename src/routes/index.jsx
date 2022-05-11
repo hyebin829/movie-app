@@ -9,7 +9,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Main />} />
-          <Route path='/favorites' element={<Favorites />} />
+          <Route path='favorites' element={<Favorites />} />
         </Routes>
       </BrowserRouter>
     </div>
