@@ -1,0 +1,23 @@
+@use '/src/styles/constants/colors';
+
+.notFound {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  padding: 300px 40px 60px;
+  text-align: center;
+  background-color: colors.$BACKGROUND;
+  border-radius: 60px;
+
+  h1 {
+    font-size: 50px;
+    color: colors.$WHITE;
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 500;
+    color: colors.$POINT1;
+  }
+}
