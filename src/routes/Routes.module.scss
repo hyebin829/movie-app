@@ -1,8 +1,10 @@
 @use '../styles/constants/colors';
 
 .app {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: rgb(61, 61, 61);
 }
