@@ -1,0 +1,28 @@
+@use '/src/styles/constants/colors';
+
+.favoritesWrapper {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  padding: 50px 40px 60px;
+  background-color: colors.$BACKGROUND;
+  border-radius: 60px;
+
+  h1 {
+    position: fixed;
+    display: block;
+    width: 295px;
+    height: 100px;
+    padding-top: 20px;
+    font-size: 25px;
+    color: colors.$WHITE;
+    text-align: center;
+  }
+
+  .favoriteList {
+    position: relative;
+    height: 600px;
+    margin-top: 80px;
+    overflow: scroll;
+  }
+}
