@@ -1,0 +1,61 @@
+@use '/src/styles/constants/colors';
+
+.movieWrapper {
+  width: 100%;
+  height: 140px;
+  margin-top: 10px;
+  border-bottom: 1px solid colors.$GRAY6;
+
+  .movieList {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 130px;
+    margin-bottom: 10px;
+
+    .moviePoster {
+      width: 90px;
+      height: 130px;
+      line-height: 130px;
+      vertical-align: middle;
+      border-radius: 15px;
+    }
+
+    .notFoundImg {
+      width: 90px;
+      height: 130px;
+      line-height: 130px;
+    }
+
+    .movieInfoWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin: 0 auto;
+
+      .movieTitle {
+        width: 190px;
+        height: 40px;
+        overflow: hidden;
+        font-size: 18px;
+        line-height: 50px;
+        color: colors.$WHITE;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .movieYear {
+        font-size: 15px;
+        font-weight: 300;
+        color: colors.$WHITE;
+      }
+
+      .movieType {
+        font-size: 18px;
+        font-weight: 500;
+        color: colors.$SUB_TITLE;
+      }
+    }
+  }
+}
