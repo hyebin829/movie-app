@@ -3,79 +3,83 @@
 @use '/src/styles/mixins/flexbox';
 @use '/src/styles/mixins/position';
 
-.weather {
+.mainWrapper {
   position: relative;
-  width: 360px;
-  height: 720px;
-  padding: 40px;
-  background-color: #fafbfe;
+  width: 375px;
+  height: 812px;
+  padding: 50px 40px 60px;
+  background-color: colors.$BACKGROUND;
   border-radius: 60px;
 
-  h1 {
-    font-size: 24px;
-    font-weight: 600;
-    color: colors.$BIG_TITLE;
-    text-align: center;
-  }
+  .mainFixed {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
 
-  .forecast {
-    margin-top: 40px;
-
-    h2 {
-      font-size: 14px;
-      font-weight: 600;
+    h1 {
+      margin-bottom: 30px;
+      font-size: 25px;
+      font-weight: 400;
+      color: colors.$WHITE;
+      text-align: center;
     }
 
-    ul {
-      margin-top: 24px;
-    }
+    .inputWrapper {
+      position: relative;
+      width: 100%;
+      height: 50px;
 
-    li {
-      padding: 24px 14px;
-      background-color: rgba(colors.$BLACK, 10%);
-      border-radius: 20px;
-
-      + li {
-        margin-top: 24px;
+      .searchInput {
+        position: fixed;
+        width: 295px;
+        height: 50px;
+        padding-left: 20px;
+        font-size: 20px;
+        color: colors.$WHITE;
+        background-color: colors.$INPUT;
+        border-radius: 15px;
       }
 
-      dl {
-        display: flex;
-
-        > div {
-          flex: 1;
-        }
-      }
-
-      dt,
-      dd {
-        text-align: center;
-      }
-
-      dt {
-        display: none;
-      }
-
-      time {
-        display: block;
-
-        &:first-child {
-          font-weight: 600;
-        }
-
-        &:last-child {
-          margin-top: 4px;
-        }
-      }
-
-      .temp {
-        font-size: 32px;
-
-        sup {
-          font-size: 10px;
-          vertical-align: top;
-        }
+      .searchButton {
+        position: absolute;
+        top: 30%;
+        right: 20px;
       }
     }
   }
+
+  section {
+    position: relative;
+    width: 100%;
+    height: 560px;
+    overflow: scroll;
+
+    .notFoundData {
+      padding-top: 200px;
+      font-size: 20px;
+      font-weight: 300;
+      color: colors.$WHITE;
+      text-align: center;
+    }
+
+    .loading {
+      margin-top: 20px;
+      font-size: 25px;
+      font-weight: 300;
+      color: colors.$WHITE;
+      text-align: center;
+    }
+  }
+
+  footer {
+    position: relative;
+    width: 100%;
+    height: 100px;
+  }
+}
+
+.refdiv {
+  width: 200px;
+  height: 50px;
 }
