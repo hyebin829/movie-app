@@ -1,3 +1,5 @@
+@use '/src/styles/constants/colors';
+
 .modalBackground {
   position: fixed;
   top: 0;
@@ -18,10 +20,12 @@
   justify-content: space-around;
   width: 250px;
   height: 150px;
-  background-color: white;
+  background-color: colors.$INPUT;
   border-radius: 15px;
+  box-shadow: -8px 17px 7px 0 rgba(0, 0, 0, 47%);
 
   .text {
+    color: colors.$WHITE;
     text-align: center;
 
     h5 {
