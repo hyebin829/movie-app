@@ -1,0 +1,55 @@
+@use '/src/styles/constants/colors';
+
+.loadingPage {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  padding: 300px 40px 60px;
+  text-align: center;
+  background-color: colors.$BACKGROUND;
+  border-radius: 60px;
+}
+
+.spinnerWrapper {
+  position: relative;
+
+  .spinnerBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: transparent;
+
+    .circleBorder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      padding: 3px;
+      background: colors.$POINT1;
+      background: linear-gradient(0deg, rgba(141, 98, 238, 10%) 33%, rgba(141, 98, 238, 100%) 100%);
+      border-radius: 50%;
+      animation: spin 0.8s linear 0s infinite;
+
+      .circleCore {
+        width: 100%;
+        height: 100%;
+        background-color: colors.$BACKGROUND;
+        border-radius: 50%;
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0);
+      }
+
+      to {
+        transform: rotate(359deg);
+      }
+    }
+  }
+}

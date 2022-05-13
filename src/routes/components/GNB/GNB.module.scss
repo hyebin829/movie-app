@@ -1,0 +1,29 @@
+@use '/src/styles/constants/colors';
+
+.gnb {
+  position: absolute;
+  bottom: 7%;
+  width: 375px;
+  height: 60px;
+  overflow: hidden;
+  background-color: colors.$BACKGROUND;
+  border-radius: 0 0 60px 60px;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 15px;
+      color: colors.$SUB_TITLE;
+
+      &.isActive {
+        font-weight: 400;
+        color: colors.$WHITE;
+      }
+    }
+  }
+}

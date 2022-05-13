@@ -1,0 +1,9 @@
+@use '/src/styles/constants/colors';
+
+.isFavorite,
+.isNotFavorite {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  color: colors.$POINT1;
+}
