@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
 
 body,
 button,
 input,
 textarea {
-  font-family: Inter, Arial, PingFangSC-Regular, 'Microsoft YaHei', sans-serif !important;
+  font-family: 'IBM Plex Sans KR', 'IBM Plex Sans', Roboto, Inter, Arial, 'Microsoft YaHei', sans-serif !important;
   font-feature-settings: 'tnum';
+  letter-spacing: -0.075em;
 }
 
 input[type='number'] {
