@@ -52,5 +52,16 @@
       border: 1px solid black;
       border-radius: 10px;
     }
+
+    .deleteFavorite,
+    .addFavorite {
+      color: colors.$WHITE;
+      background-color: colors.$POINT1;
+    }
+
+    .cancelButton {
+      color: colors.$WHITE;
+      background-color: colors.$SUB_TITLE;
+    }
   }
 }
