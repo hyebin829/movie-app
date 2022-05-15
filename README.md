@@ -30,5 +30,10 @@
   
   ![deletefavorite](https://user-images.githubusercontent.com/80376561/168453178-37d6b929-e536-4280-b945-f78a55af8c93.gif)
 
+  - 목록 drag&drop : drag&drop으로 즐겨찾기 목록 순서를 바꿀 수 있습니다. 
+    
+  ![changelist](https://user-images.githubusercontent.com/80376561/168458286-85aa6e07-a6bc-44a4-8fac-da0ea9474790.gif)
+
+
 
 </details>
