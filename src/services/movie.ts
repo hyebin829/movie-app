@@ -20,6 +20,7 @@ export const getMovieApi = (params: Params) =>
 export const useGetMovie = () => {
   const [loading, setLoading] = useState(false)
   const [hasMore, setHasMore] = useState(false)
+  const [tooManyResult, setTooManyResult] = useState(false)
   const setMovieData = useSetRecoilState(MovieDataState)
 
   const searchWord = useRecoilValue(SearchWordState)
@@ -35,9 +36,12 @@ export const useGetMovie = () => {
     }).then((res) => {
       if (res.data.Response === 'False') {
         setMovieData([])
+        setTooManyResult(false)
         setHasMore(false)
-        setLoading(false)
-        return
+      }
+      if (res.data.Response === 'False' && res.data.Error === 'Too many results.') {
+        setMovieData([])
+        setTooManyResult(true)
       }
       if (res.data.Response === 'True') {
         setMovieData((prev) => Array.from(new Set([...prev, ...res.data.Search])))
@@ -48,5 +52,5 @@ export const useGetMovie = () => {
     })
   }, [searchWord, pageNum, setMovieData, setTotalResultNum])
 
-  return { loading, hasMore }
+  return { loading, hasMore, tooManyResult }
 }

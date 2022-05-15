@@ -29,7 +29,7 @@ const Main = () => {
     threshold: 1,
   })
 
-  const { hasMore, loading } = useGetMovie()
+  const { hasMore, loading, tooManyResult } = useGetMovie()
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -82,8 +82,19 @@ const Main = () => {
                 </Movie>
               </Fragment>
             ))}
-          {!movieData.length && !loading ? <div className={styles.notFoundData}>검색 결과가 없습니다.</div> : <div />}
+          {!movieData.length && !loading && !tooManyResult ? (
+            <div className={styles.notFoundData}>검색 결과가 없습니다.</div>
+          ) : (
+            <div />
+          )}
           {loading && <Loading />}
+          {!movieData.length && tooManyResult && !loading ? (
+            <div className={styles.notFoundData}>
+              검색 결과가 너무 많습니다. <br /> 검색어를 구체적으로 입력해주세요.
+            </div>
+          ) : (
+            <div />
+          )}
           <div ref={target} className={styles.refdiv} />
         </section>
       </div>
