@@ -83,10 +83,7 @@ const Main = () => {
               </Fragment>
             ))}
           {!movieData.length && !loading ? <div className={styles.notFoundData}>검색 결과가 없습니다.</div> : <div />}
-          {loading && (
-            // <div className={styles.loading}>Loading... </div>
-            <Loading />
-          )}
+          {loading && <Loading />}
           <div ref={target} className={styles.refdiv} />
         </section>
       </div>

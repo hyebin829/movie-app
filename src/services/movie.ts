@@ -41,7 +41,6 @@ export const useGetMovie = () => {
       }
       if (res.data.Response === 'True') {
         setMovieData((prev) => Array.from(new Set([...prev, ...res.data.Search])))
-
         setTotalResultNum(Number(res.data.totalResults))
         setHasMore([...res.data.Search].length > 0)
       }
