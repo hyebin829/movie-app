@@ -6,10 +6,10 @@ import { ModalVisibleState, MovieDataState, PageNumState, SearchWordState, Total
 import { useGetMovie } from 'services/movie'
 import { IsearchResult } from 'types/movie'
 
-import Modal from '../components/modal/modal'
+import Modal from '../components/modal'
 import Movie from './movie'
 import FavoriteButton from 'routes/components/favoriteButton/favoriteButton'
-import Loading from 'routes/components/loading'
+import Loading from 'routes/components/loading/loadingIcon'
 import styles from './Main.module.scss'
 import { BsSearch } from 'react-icons/bs'
 

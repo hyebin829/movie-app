@@ -1,4 +1,4 @@
-import Loading from './index'
+import Loading from './loadingIcon'
 import styles from './Loading.module.scss'
 
 const LoadingPage = () => {

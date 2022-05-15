@@ -5,7 +5,7 @@ import { ModalVisibleState } from 'state'
 import { IsearchResult } from 'types/movie'
 
 import FavoriteButton from 'routes/components/favoriteButton/favoriteButton'
-import Modal from 'routes/components/modal/modal'
+import Modal from 'routes/components/modal'
 import Movie from 'routes/Main/movie'
 import styles from './Favorites.module.scss'
 

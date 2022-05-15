@@ -8,7 +8,7 @@ import styles from './Routes.module.scss'
 
 const Main = lazy(() => import('./Main/index'))
 const Favorites = lazy(() => import('./Favorites/index'))
-const NotFound = lazy(() => import('./Notfound/notfound'))
+const NotFound = lazy(() => import('./Notfound'))
 
 const App = () => {
   return (
