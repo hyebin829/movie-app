@@ -90,7 +90,7 @@ const Main = () => {
           {loading && <Loading />}
           {!movieData.length && tooManyResult && !loading ? (
             <div className={styles.notFoundData}>
-              검색 결과가 너무 많습니다. <br /> 검색어를 구체적으로 입력해주세요.
+              검색 결과가 너무 많습니다. <br /> 검색어를 3글자 이상 입력해주세요.
             </div>
           ) : (
             <div />
