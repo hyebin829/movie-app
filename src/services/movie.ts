@@ -5,7 +5,7 @@ import { axios } from 'hooks/worker'
 import { MovieDataState, PageNumState, SearchWordState, TotalResultNum } from 'state'
 import { ImovieAPIRes } from 'types/movie'
 
-const BASE_URL = 'http://www.omdbapi.com'
+const BASE_URL = '//www.omdbapi.com'
 
 interface Params {
   movieName: string
@@ -52,5 +52,5 @@ export const useGetMovie = () => {
     })
   }, [searchWord, pageNum, setMovieData, setTotalResultNum])
 
-  return { loading, hasMore, tooManyResult }
+  return { loading, hasMore, tooManyResult, setLoading }
 }
